@@ -1,3 +1,8 @@
+html, body {
+    height: 100%;
+    margin: 0; /* remove the default margin */
+}
+
 #title {
     text-align: center;
     color: brown;
@@ -5,4 +10,25 @@
 
 #description {
     text-align: center;
+}
+
+#resultpane {
+    text-align: center;
+    border: 1px solid black; /* this creates a 1px-wide black border */
+    width: 50%;
+    height: 10%;
+    margin: 2px auto;
+}
+
+
+#calculator {
+    width: 50%;
+    height: 60%;
+    margin:auto;
+}
+
+.btn {
+    margin: auto;
+    width: 24.5%;
+    height: 20%;
 }
