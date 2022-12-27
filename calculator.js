@@ -4,6 +4,7 @@
 
 // result pane
 var result = ``
+var resultpane = document.querySelector(`#resultpane`);
 
 //Number Pad
 const numberPad = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'zero', `decimal`];
@@ -13,7 +14,7 @@ numberPad.forEach(number => {
   element.addEventListener(`click`, () => {
     // add the button number into the result text
     result += element.innerText;
-    console.log(result) // testing feature
+    resultpane.textContent = result
   });
 });
 
@@ -23,6 +24,7 @@ const clear = document.querySelector(`#AC`)
 clear.addEventListener(`click`, () => {
     //reset the result string
     result = ``
+    resultpane.textContent = result
 });
 
 // Negate Function 
@@ -35,6 +37,7 @@ negate.addEventListener(`click`, () => {
     // If the result is not negative, add the "-" character
     result = "-" + result;
   }
+  resultpane.textContent = result
 });
 
 // Percent Function
@@ -46,11 +49,16 @@ percent.addEventListener(`click`, () => {
   }
   // Insert a decimal point two digits from the right
   result = result.slice(0, result.length - 2) + "." + result.slice(-2);
+  resultpane.textContent = result
 });
 
 // Backspace
 const backspace = document.querySelector(`#backspace`);
 backspace.addEventListener(`click`, () => {
     result = result.slice(0, result.length - 1);
+    resultpane.textContent = result
 });
+
+// Arithmetic
+
 
