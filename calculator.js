@@ -47,3 +47,9 @@ percent.addEventListener(`click`, () => {
   result = result.slice(0, result.length - 2) + "." + result.slice(-2);
 });
 
+// Backspace
+const backspace = document.querySelector(`#backspace`);
+backspace.addEventListener(`click`, () => {
+    result = result.slice(0, result.length - 1);
+    console.log(result)
+});
