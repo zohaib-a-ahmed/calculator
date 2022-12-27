@@ -6,7 +6,7 @@
 var result = ``
 
 //Number Pad
-const numberPad = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'zero'];
+const numberPad = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'zero', `decimal`];
 
 numberPad.forEach(number => {
   const element = document.querySelector(`#${number}`);
@@ -16,6 +16,7 @@ numberPad.forEach(number => {
     console.log(result) // testing feature
   });
 });
+
 
 // Clear Function
 const clear = document.querySelector(`#AC`)
@@ -51,5 +52,5 @@ percent.addEventListener(`click`, () => {
 const backspace = document.querySelector(`#backspace`);
 backspace.addEventListener(`click`, () => {
     result = result.slice(0, result.length - 1);
-    console.log(result)
 });
+
