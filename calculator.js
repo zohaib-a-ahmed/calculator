@@ -43,14 +43,37 @@ negate.addEventListener(`click`, () => {
 // Percent Function
 const percent = document.querySelector(`#percent`);
 percent.addEventListener(`click`, () => {
-  // Add leading zeros until there are 3 digits
-  while (result.length < 3) {
-    result = "0" + result;
+  let beforeDecimal = "";
+  let afterDecimal = "";
+  let hasDecimal = false;
+
+  // Check if result has a decimal
+  for (let i = 0; i < result.length; i++) {
+    if (result[i] === ".") {
+      beforeDecimal = result.slice(0, i);
+      afterDecimal = result.slice(i+1);
+      hasDecimal = true;
+      break;
+    }
   }
-  // Insert a decimal point two digits from the right
-  result = result.slice(0, result.length - 2) + "." + result.slice(-2);
-  resultpane.textContent = result
+
+  if (hasDecimal) {
+    // Shift decimal two places left and add leading zeros
+    while (beforeDecimal.length < 3) {
+      beforeDecimal = "0" + beforeDecimal;
+    }
+    result = beforeDecimal.slice(0, beforeDecimal.length - 2) + "." + beforeDecimal.slice(-2) + afterDecimal
+  } else {
+    // Add decimal two digits from the right and leading zeros
+    while (result.length < 3) {
+      result = "0" + result;
+    }
+    result = result.slice(0, result.length - 2) + "." + result.slice(-2);
+  }
+
+  resultpane.textContent = result;
 });
+
 
 // Backspace
 const backspace = document.querySelector(`#backspace`);

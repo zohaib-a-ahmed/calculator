@@ -19,6 +19,9 @@ html, body {
     height: 10%;
     margin: 2px auto;
     padding: 10px;
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
 }
 
 
