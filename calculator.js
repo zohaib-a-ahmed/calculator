@@ -60,5 +60,52 @@ backspace.addEventListener(`click`, () => {
 });
 
 // Arithmetic
+const operations = ['add', 'subtract', 'divide', 'multiply'];
+let var1 = ``
+let arithmetic_operation;
+
+operations.forEach(operation => {
+  const operation_button = document.querySelector(`#${operation}`);
+  operation_button.addEventListener(`click`, () => {
+    if(result != ``){
+        var1 = result;
+    }
+    arithmetic_operation = operation_button.innerText;
+    resultpane.textContent = ``
+    result = ``
+
+    console.log(var1)
+    console.log(arithmetic_operation)
+  });
+});
 
 
+
+// Evaluation
+const evaluation = document.querySelector(`#evaluate`)
+evaluation.addEventListener(`click`, () => {
+  evaluate(var1, arithmetic_operation, result);
+  result = ``
+});
+
+
+
+function evaluate(var1, arithmetic_operation, var2) {
+    let answer;
+    switch (arithmetic_operation) {
+      case "+":
+        answer = parseFloat(var1) + parseFloat(var2);
+        break;
+      case "-":
+        answer = parseFloat(var1) - parseFloat(var2);
+        break;
+      case "x":
+        answer = parseFloat(var1) * parseFloat(var2);
+        break;
+      case "/":
+        answer = parseFloat(var1) / parseFloat(var2);
+        break;
+    }
+    resultpane.textContent = answer.toString();
+  }
+  
