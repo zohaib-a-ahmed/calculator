@@ -84,8 +84,8 @@ operations.forEach(operation => {
 // Evaluation
 const evaluation = document.querySelector(`#evaluate`)
 evaluation.addEventListener(`click`, () => {
-  evaluate(var1, arithmetic_operation, result);
-  result = ``
+  var1 = evaluate(var1, arithmetic_operation, result);
+  result = var1
 });
 
 
@@ -102,10 +102,11 @@ function evaluate(var1, arithmetic_operation, var2) {
       case "x":
         answer = parseFloat(var1) * parseFloat(var2);
         break;
-      case "/":
+      case "÷":
         answer = parseFloat(var1) / parseFloat(var2);
         break;
     }
     resultpane.textContent = answer.toString();
+    return answer.toString()
   }
   
